@@ -1,0 +1,245 @@
+// Variables
+$font-family: 'Open Sans', sans-serif;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+
+$color-green: #72ac51;
+$color-background: #ebebeb;
+$color-text: #1b1b1b;
+$color-active-link-bg: #eee;
+$color-active-link-bg-dark: #47752d;
+$color-page-title: #565656;
+
+$menu-height: 75px;
+$content-width: 1070px;
+$gutter-width: 20px;
+
+// Mixins
+@mixin container {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+* {
+    box-sizing: border-box !important;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  background-color: $color-background;
+  color: $color-text;
+  font-weight: $font-weight-normal;
+}
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.container {
+  @include container;
+}
+
+.header {
+  height: $menu-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 180px;
+  height: $menu-height;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  a {
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 9999px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $color-active-link-bg;
+    }
+
+    &.active {
+      background-color: $color-active-link-bg;
+    }
+
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.button {
+  background-color: $color-green;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $color-active-link-bg-dark;
+  }
+}
+
+main {
+  display: flex;
+  gap: $gutter-width;
+  margin-top: 40px;
+}
+
+.sidebar {
+  width: calc(25% - #{$gutter-width / 2});
+}
+
+.content {
+  width: calc(75% - #{$gutter-width / 2});
+}
+
+.about-card {
+  background-color: white;
+}
+
+.about-header {
+  background-color: $color-green;
+  color: white;
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: $font-weight-semibold;
+}
+
+.about-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f3f3f3;
+    }
+  }
+}
+
+h1 {
+  font-size: 36px;
+  color: $color-page-title;
+  margin-bottom: 32px;
+  font-weight: $font-weight-semibold;
+}
+
+.cards {
+  display: flex;
+  gap: $gutter-width;
+}
+
+.card {
+  width: calc(50% - #{$gutter-width / 2});
+  background-color: white;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: $font-weight-semibold;
+}
+
+.card p {
+  font-size: 15px;
+  color: $color-text;
+  margin-bottom: 0;
+}
+
+.card-image {
+  height: 192px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+}
+
+#main-login {
+    width: 100%;
+    background-color: $color-background;
+    padding-top: 20px;
+}
+
+#form-login {
+    background-color: white;
+    width: 570px;
+    margin: 0 auto;
+    padding: 67px 0 60px 60px;
+}
+
+.login-title {
+    font-size: 32px;
+    font-weight: 100;
+}
+
+#email-input,
+#password-input {
+    height: 45px;
+    padding: 10px;
+    width: 450px;
+    margin-bottom: 25px;
+    border: 1px solid $color-background;
+    outline: 1px solid grey;
+}
+
+#email-input:focus:valid,
+#password-input:focus:valid {
+    outline: 2px solid $color-active-link-bg-dark;
+}
+
+#email-input:focus:invalid,
+#password-input:focus:invalid {
+    outline: 2px solid red;
+}
+
+#login-button {
+    display: block;
+    width: 450px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: $color-green;
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+#login-button:hover {
+    background-color: $color-active-link-bg-dark;
+}
+
+
+
