@@ -20,8 +20,7 @@ The goal was to build two responsive and styled web pages from static mockups, u
 2. Start the local server:
    ```bash
    python3 run_server.py
-````
-
+   ```
 3. In another terminal, run the SCSS watcher:
 
    ```bash
